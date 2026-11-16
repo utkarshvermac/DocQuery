@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body { height: 100%; }
+  body { @apply bg-paper text-ink font-sans antialiased; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-pine; }
+  ::selection { @apply bg-mark-soft; }
+}
+
+@layer components {
+  /* Answer typography: serif body with comfortable measure */
+  .prose-answer { @apply font-serif text-[1.0625rem] leading-[1.7] text-ink; max-width: 68ch; }
+  .prose-answer p { @apply mb-3; }
+  .prose-answer ul { @apply mb-3 list-disc pl-5; }
+  .prose-answer ol { @apply mb-3 list-decimal pl-5; }
+  .prose-answer li { @apply mb-1; }
+  .prose-answer strong { @apply font-semibold; }
+  .prose-answer code { @apply rounded bg-paper-sunk px-1 py-0.5 font-mono text-[0.9em]; }
+  .prose-answer pre { @apply mb-3 overflow-x-auto rounded-md bg-paper-sunk p-3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
